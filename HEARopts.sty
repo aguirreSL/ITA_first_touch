@@ -1,0 +1,208 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Comandos adicionais desenvolvidos por
+%%% Prof. William D'Andrea Fonseca - Eng. Acústica UFSM
+%%% Versão de 13/04/2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{pos}{RGB}{22,71,135}
+\definecolor{greenHear}{RGB}{111,145,120}
+\definecolor{bhear}{RGB}{0,150,180} 
+
+%%%%%%%%%%%%%% Comandos para o texto
+%% Aliases
+\newcommand{\dg}{{\ensuremath{^\circ}}}  
+
+\DeclareRobustCommand{\eg}{e.g.\@\xspace}
+\DeclareRobustCommand{\ie}{i.e.\@\xspace}
+
+\DeclareRobustCommand{\etc}{%
+    \@ifnextchar{.}%
+        {etc}%
+        {etc.\@\xspace}%
+}
+\DeclareRobustCommand{\etal}{%
+    \@ifnextchar{.}%
+        {{et~al}}%
+        {{\textit{et~al.}}\@\xspace}%
+}
+\makeatother
+%%%%%%%%%%%%%% Comandos para troca de línguas
+\newcommand*{\txEN}[1]{%
+  \foreignlanguage{english}{#1}%
+}
+
+\newcommand*{\txBR}[1]{%
+  \foreignlanguage{brazilian}{#1}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Edita Bookmarks no texto
+\usepackage{bookmark}
+%e.g. \bookmark[page=1,level=0]{Title Page}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\figura}[1]{Figure~\ref{#1}\xspace} %\figura{g1}  --> Figura X 
+\newcommand{\fign}[1]{\ref{#1}\xspace} 
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+\newcommand{\Figura}[1]{Figure~\ref{#1}\xspace}
+\newcommand{\figuras}[1]{Figures~\ref{#1}\xspace}
+\newcommand{\Figuras}[1]{Figures~\ref{#1}\xspace}
+\newcommand{\subfigura}[1]{Figure~\subref*{#1}\xspace} %\subfigura{g1}  --> Figura X (a)
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\tabela}[1]{Table~\ref{#1}\xspace}
+\newcommand{\Tabela}[1]{Table~\ref{#1}\xspace}
+\newcommand{\tabelas}[1]{Tables~\ref{#1}\xspace}
+\newcommand{\Tabelas}[1]{Tables~\ref{#1}\xspace}
+\newcommand{\Tab}[1]{Tab.~\ref{#1}}
+\newcommand{\tabn}[1]{\ref{#1}\xspace}
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\equacao}[1]{Equation~\eqref{#1}\xspace}
+\newcommand{\eq}[1]{eq.~\eqref{#1}\xspace}
+\newcommand{\Eq}[1]{Eq.~\eqref{#1}}
+\newcommand{\eqn}[1]{\eqref{#1}\xspace}
+\newcommand{\Equacao}[1]{Equation~\eqref{#1}\xspace}
+\newcommand{\equacoes}[1]{Equations~\eqref{#1}\xspace}
+\newcommand{\Equacoes}[1]{Equations~\eqref{#1}\xspace}
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\secao}[1]{Section~\ref{#1}\xspace}
+\newcommand{\Secao}[1]{Section~\ref{#1}\xspace}
+\newcommand{\secoes}[1]{Sections~\ref{#1}\xspace}
+\newcommand{\Secoes}[1]{Sections~\ref{#1}\xspace}
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\itemref}[1]{item~\ref{#1}\xspace}
+\newcommand{\Item}[1]{Item~\ref{#1}\xspace}
+\newcommand{\itens}[1]{items~\ref{#1}\xspace}
+\newcommand{\Itens}[1]{Items~\ref{#1}\xspace}
+%%%%%%%%%%%%%%
+\newcommand{\capitulo}[1]{Chapter~\ref{#1}\xspace}
+\newcommand{\pagina}[1]{page~\pageref{#1}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declarar capítulos
+% \newcommand{\capitulo}[1]{Capítulo~\ref{#1}\xspace}
+% \newcommand{\capitulos}[1]{Capítulos~\ref{#1}\xspace}
+% \newcommand{\capn}[1]{\ref{#1}\xspace}
+% \newcommand{\apendice}[1]{Apêndice~\ref{#1}\xspace}
+% \newcommand{\anexo}[1]{Anexo~\ref{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Declarar páginas
+% \newcommand{\pagina}[1]{página~\pageref{#1}\xspace}
+% \newcommand{\paginas}[1]{páginas~\pageref{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%% Deflist
+\newenvironment{deflist}%[1]
+{\begin{list}
+{}{
+\setlength\itemsep{.0mm}
+\renewcommand{\makelabel}[1]{\hfill\text{##1} :}%
+\settowidth{\labelwidth}{\text{where}\hspace{0.2ex} :}%{\text{#1}\hspace{1ex}:}%
+\setlength{\leftmargin}{\labelwidth+\labelsep}}\item[where]}%
+{\end{list}}
+% renova a explicação da lista de variaveis de uma expressao matematica.
+%%%%%%%%%%%%% Anotações na margem, escreva \marginlabel{bla bla}
+\newcommand{\marginlabel}[1]{\mbox{}\marginpar{\raggedleft\hspace{0pt}#1}}
+%%%%%%%%%%%%% Black page
+\newcommand{\blankpage}{\newpage\thispagestyle{empty}\mbox{}}
+
+%%% Matemática
+\DeclareMathOperator{\ji}{j}
+\DeclareMathOperator{\dt}{d}
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\xp}{exp}
+
+\renewcommand{\Re}{\mbox{Re}}
+\renewcommand{\Im}{\mbox{Im}}
+\newcommand{\sen}{\operatorname{sen}} 
+\newcommand{\senh}{\operatorname{senh}}
+\newcommand{\hada}{\operatorname{HAD}}
+\newcommand{\F}{\mathfrak{F}} % F de Fourier
+\newcommand{\dotfr}{\raisebox{+0.5ex}{\; .}}
+\newcommand{\cotfr}{\raisebox{+0.5ex}{\; ,}}
+
+%%%%%%%%%%%%% Comandos para superscript e subscript, escreva 
+\newcommand{\sub}[1]{\raisebox{-0.5ex}{\scriptsize #1}}
+\newcommand{\supe}[1]{\raisebox{0.7ex}{\scriptsize #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Escrever texto dentro das equacoes
+\newcommand{\tx}[1]{\text{#1}}								  % Uso \tx{}
+\newcommand{\txu}[1]{\ensuremath{_{\text{#1}}}} % Uso \txu{}	
+\newcommand{\txup}[1]{\ensuremath{^{\text{#1}}}}% Uso \txup{}	
+\newcommand{\txf}[1]{\text{\footnotesize #1}}	  % Uso \txf{}
+\newcommand{\txs}[1]{\text{\scriptsize #1}}		  % Uso \txs{}
+\newcommand{\txy}[1]{\text{\tiny #1}}		        % Uso \txy{}
+
+%%%%%%%%%%%%%% Fracoes no texto
+\usepackage{xfrac}
+%e.g. \sfrac{numerator}{denominator}
+
+%%%%%%%%%%%%%% Opcoes avancadas no enumerate
+\usepackage{enumerate}
+
+%%%%%%%%%%%%%% Raiz quadrada com ``fechamento''
+% Uso:
+% \sqrt{1982} ou \oldsqrt{1982}
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%% Para colocar pequenas teclas desenhadas do teclado
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+\newcommand*\keystroke[1]{%
+  \tikz[baseline=-4pt]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={shadow xshift=0.2ex,shadow yshift=-0.2ex,fill=black,opacity=0.75},
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily
+    ](key) {#1\strut}
+  ;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Matrices with alignment
+%http://texblog.net/latex-archive/maths/matrix-align-left-right/
+%e.g. \begin{pmatrix}[r]  or \begin{pmatrix}[c] 
+
+\makeatletter
+\renewcommand*\env@matrix[1][c]{\hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols #1}}
+\makeatother
+
+%%%%%%%%%%%%%% Footnote
+%\interfootnotelinepenalty=10000 %If the text within the footnote is very long, LaTeX may split the footnote over several pages.
+
+%%%%%%%%%%%%%% Starting chapter without a pagebreak
+%To prevent the page breaks before new chapters, one possibility is to redefine chapter without \clearpage or \cleardoublepage, let's use \par instead:
+%http://www.latex-community.org/forum/viewtopic.php?f=5&t=2521
+
+%\makeatletter
+%\renewcommand\chapter{\par%
+  %\thispagestyle{plain}%
+  %\global\@topnum\z@
+  %\@afterindentfalse
+  %\secdef\@chapter\@schapter}
+%\makeatother
